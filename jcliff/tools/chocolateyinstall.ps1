@@ -1,6 +1,7 @@
 ﻿$ErrorActionPreference = 'Stop';
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 $name = 'jcliff'
+$checksum = '04E1A0E5AA40DD2DCCFDAF9C093BD8227E27B122DEAD8A623012F4E9031593AC'
 $version = $env:chocolateyPackageVersion
 $name_version = "$name-$version"
 $jcliff_home = Join-Path $toolsDir $name_version
@@ -14,6 +15,8 @@ Remove-Item "$(Join-Path $toolsDir 'jcliff-*')" -Force -Recurse
 Install-ChocolateyZipPackage `
     -PackageName $name `
     -Url $url `
+    -Checksum $checksum `
+    -ChecksumType 'sha256' `
     -UnzipLocation $toolsDir
 
 $File = Get-ChildItem -File -Path $toolsDir -Filter *.tar
