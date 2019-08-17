@@ -11,5 +11,5 @@ Install-ChocolateyEnvironmentVariable `
     -VariableValue $null `
     -VariableType 'Machine'
 
-Remove-Item $jcliff_home -Recurse -Force
+Remove-Item $jcliff_home -Recurse -Force -ErrorAction Ignore
 Uninstall-BinFile -Name 'jcliff' -Path $jcliff_bat

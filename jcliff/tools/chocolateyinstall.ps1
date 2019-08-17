@@ -10,7 +10,7 @@ $jcliff_bat = Join-Path $jcliff_home 'jcliff.bat'
 $url = "https://github.com/bserdar/jcliff/releases/download/v$version/jcliff-$version-dist.tar.gz"
 
 # Delete leftovers from previous versions
-Remove-Item "$(Join-Path $toolsDir 'jcliff-*')" -Force -Recurse
+Remove-Item "$(Join-Path $toolsDir 'jcliff-*')" -Force -Recurse -ErrorAction Ignore
 
 Install-ChocolateyZipPackage `
     -PackageName $name `
@@ -23,7 +23,7 @@ $File = Get-ChildItem -File -Path $toolsDir -Filter *.tar
 
 Get-ChocolateyUnzip -fileFullPath $File.FullName -destination $toolsDir
 
-Remove-Item -Path $File.FullName
+Remove-Item -Path $File.FullName -ErrorAction Ignore
 
 Install-ChocolateyEnvironmentVariable `
     -VariableName 'JCLIFF_HOME' `
