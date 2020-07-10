@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>jcliff</id>
-    <version>2.12.3</version>
+    <version>2.12.5</version>
     <packageSourceUrl>https://github.com/redhat-cop/chocolatey-packages</packageSourceUrl>
     <owners>Andrew Block</owners>
     <title>jcliff</title>

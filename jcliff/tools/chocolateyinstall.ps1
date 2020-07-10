@@ -1,7 +1,7 @@
 ﻿$ErrorActionPreference = 'Stop';
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 $name = 'jcliff'
-$checksum = '04E1A0E5AA40DD2DCCFDAF9C093BD8227E27B122DEAD8A623012F4E9031593AC'
+$checksum = '1738fe4cb8a863e6c609538aad85c1ccbe73ba6326ba7cc1cc186fbb9cd13fd7'
 $version = $env:chocolateyPackageVersion
 $name_version = "$name-$version"
 $jcliff_home = Join-Path $toolsDir $name_version
